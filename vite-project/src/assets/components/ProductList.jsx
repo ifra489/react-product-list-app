@@ -41,9 +41,9 @@ const [loading,setLoading] = useState(true);
         {products.map((product) => (
           <div key={product.id} style={styles.card}>
             <img src={product.image} alt={product.title} style={styles.image} />
-            <h3>{product.title}</h3>
+            <h3 style={styles.title}>{product.title}</h3>
             <p><strong>Price:</strong> ${product.price}</p>
-            <p><strong>Description:</strong> {product.description}</p>
+            <p style={styles.description}><strong>Description:</strong> {product.description}</p>
             
           </div>
         ))}
@@ -77,6 +77,18 @@ const styles = {
     objectFit: "contain",
     marginBottom: "1rem",
   },
+  description: {
+    display: "-webkit-box",
+    WebkitLineClamp: 3,
+    WebkitBoxOrient: "vertical",
+    overflow: "hidden",
+    textOverflow: "ellipsis",
+  },
+  title:{
+    height: "4rem",
+    overflow: "hidden",
+    textOverflow: "ellipsis",
+  }
 };
 
 
